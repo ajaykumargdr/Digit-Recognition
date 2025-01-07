@@ -9,7 +9,7 @@ The graph below shows the training and validation accuracy of the model :
 
 ![Figure_1](https://github.com/user-attachments/assets/f6eee4da-f2a0-467d-a370-93a73fe15925)
 
-## Features
+## ⚙️ Features 
 
 - Train a CNN model on the MNIST dataset.
 - Save and load the trained model.
@@ -19,7 +19,7 @@ The graph below shows the training and validation accuracy of the model :
 
 <img src="https://github.com/user-attachments/assets/f789701f-52ab-4e27-9621-ee2a858d3636" width="250" />
 
-## Installation
+## 🛠️ Installation
 
 1. Clone the repository:
     ```sh
@@ -32,7 +32,7 @@ The graph below shows the training and validation accuracy of the model :
     pip install -r requirements.txt
     ```
 
-## Usage
+## 🔍 Usage
 
 ### Training the Model
 
@@ -52,14 +52,14 @@ The graph below shows the training and validation accuracy of the model :
 
 2. Use the GUI to load an image or draw a digit on the canvas for prediction.
 
-## Files
+## 🗂️ Files
 
 - `general.py`: Script for training the CNN model on the MNIST dataset.
 - `gui.py`: Script for the GUI application to load images and draw digits for prediction.
 - `requirements.txt`: List of required Python packages.
 
 
-## License
+## 📄 License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
