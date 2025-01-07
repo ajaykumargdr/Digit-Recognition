@@ -25,7 +25,7 @@ class PathRecognitionApp:
             return
 
         # Configure GUI
-        self.path_label = tk.Label(root, text="Enter image path:", font=("Arial", 12))
+        self.path_label = tk.Label(root, text="Path Image:", font=("Arial", 12))
         self.path_label.pack()
 
         self.path_entry = tk.Entry(root, width=50, font=("Arial", 12))
@@ -272,6 +272,6 @@ class PathRecognitionApp:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    root.title("Path Image Recognition")
+    root.title("Digit-Recognition")
     app = PathRecognitionApp(root)
     root.mainloop()
