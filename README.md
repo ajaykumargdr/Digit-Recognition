@@ -17,7 +17,7 @@ The graph below shows the training and validation accuracy of the model :
 - Real-time prediction of handwritten digits with confidence scores.
 - Visualization of training history and predictions.
 
-<img src="https://github.com/user-attachments/assets/f789701f-52ab-4e27-9621-ee2a858d3636" width="250" />
+   <img src="https://github.com/user-attachments/assets/f789701f-52ab-4e27-9621-ee2a858d3636" width="250" />
 
 ## 🛠️ Installation
 
