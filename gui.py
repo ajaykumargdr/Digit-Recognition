@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox
-from PIL import Image, ImageGrab, ImageOps, ImageDraw  # Added ImageDraw import
+from PIL import Image, ImageGrab, ImageOps, ImageDraw
 import numpy as np
 from tensorflow.keras.models import load_model
 import cv2
@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import io
 import platform
 
-# Значения mean и std из этапа обучения модели
+# Mean and std values from the model training phase
 MEAN = 0.1307
 STD = 0.3081
 
@@ -75,15 +75,15 @@ class PathRecognitionApp:
 
     def browse_image(self):
         try:
-            # Специальная обработка для macOS
+            # Special handling for macOS
             if platform.system() == 'Darwin':
                 root = tk.Tk()
-                root.withdraw()  # Скрываем основное окно
-                root.call('wm', 'attributes', '.', '-topmost', True)  # Поднимаем диалог на передний план
+                root.withdraw()  # Hide the main window
+                root.call('wm', 'attributes', '.', '-topmost', True)  # Bring dialog to the front
                 
             file_path = filedialog.askopenfilename(
                 parent=self.root,
-                title="Выберите изображение",
+                title="Select an image",
                 filetypes=[("Image Files", "*.png *.jpg *.jpeg *.bmp"), ("All Files", "*.*")]
             )
             
@@ -91,12 +91,12 @@ class PathRecognitionApp:
                 self.path_entry.delete(0, tk.END)
                 self.path_entry.insert(0, file_path)
             
-            # Закрываем временное окно для macOS
+            # Close the temporary window for macOS
             if platform.system() == 'Darwin':
                 root.destroy()
                 
         except Exception as e:
-            messagebox.showerror("Error", f"Ошибка при выборе файла: {str(e)}")
+            messagebox.showerror("Error", f"Error selecting file: {str(e)}")
 
     def process_image(self, img):
         # Convert to numpy array if PIL Image

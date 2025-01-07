@@ -4,11 +4,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import cv2
 
-# Загрузка и подготовка данных MNIST
+# Load and prepare MNIST data
 (train_images, train_labels), (test_images, test_labels) = datasets.mnist.load_data()
 train_images, test_images = train_images / 255.0, test_images / 255.0
 
-# Нормализация данных
+# Normalize data
 mean = np.mean(train_images)
 std = np.std(train_images)
 train_images = (train_images - mean) / std
@@ -47,11 +47,11 @@ history = model.fit(train_images, train_labels,
                    batch_size=64,  # Increased batch size
                    validation_data=(test_images, test_labels))
 
-# Оценка точности модели
+# Evaluate model accuracy
 test_loss, test_acc = model.evaluate(test_images, test_labels, verbose=2)
 print(f'\nTest accuracy: {test_acc}')
 
-# Сохранение модели
+# Save the model
 model.save('models/handwriting_recognition_model.h5')
 
 # Add visualization of results
