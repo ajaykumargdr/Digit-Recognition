@@ -30,21 +30,21 @@ model = models.Sequential([
     # Dense layers
     layers.Flatten(),
     layers.Dense(256, activation='relu'),
-    layers.Dropout(0.3),
+    layers.Dropout(0.4),  # Increased dropout rate
     layers.Dense(128, activation='relu'),
-    layers.Dropout(0.2),
+    layers.Dropout(0.3),  # Increased dropout rate
     layers.Dense(10, activation='softmax')
 ])
 
 # Update compilation with better learning rate
-model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
+model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.0005),  # Reduced learning rate
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 
 # Update training with more epochs and batch size
 history = model.fit(train_images, train_labels, 
-                   epochs=15, 
-                   batch_size=32,
+                   epochs=20,  # Increased epochs
+                   batch_size=64,  # Increased batch size
                    validation_data=(test_images, test_labels))
 
 # Оценка точности модели
