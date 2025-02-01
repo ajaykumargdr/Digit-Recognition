@@ -1,6 +1,5 @@
 tensorflow
 Pillow
-tkinter
 numpy
 matplotlib
 opencv-python
