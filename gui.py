@@ -37,7 +37,7 @@ class PathRecognitionApp:
         self.predict_btn = tk.Button(root, text="Predict", command=self.predict_digit)
         self.predict_btn.pack()
 
-        self.result_label = tk.Label(root, text="", font=("Arial", 14), fg="white")
+        self.result_label = tk.Label(root, text="", font=("Arial", 14), fg="red")
         self.result_label.pack()
 
         self.setup_canvas()
@@ -185,6 +185,13 @@ class PathRecognitionApp:
 
         return img_array
 
+    def show_debug_image(self, img):
+        plt.figure("Debug Image")
+        plt.imshow(img, cmap="gray")
+        plt.title("Processed Image")
+        plt.axis("off")
+        plt.show()
+
     def predict_digit(self):
         image_path = self.path_entry.get()
         if not image_path:
@@ -236,7 +243,7 @@ class PathRecognitionApp:
             height = self.canvas.winfo_height()
 
             # Create a new image with white background
-            image = Image.new('L', (width, height), color='white')
+            image = Image.new('L', (width, height), color='red')
             draw = ImageDraw.Draw(image)
 
             # Get all canvas objects
@@ -264,7 +271,7 @@ class PathRecognitionApp:
             
             self.result_label.config(
                 text=f"Predicted Digit: {digit}\nConfidence: {confidence:.2%}",
-                fg="white"
+                fg="red"
             )
             
         except Exception as e:
